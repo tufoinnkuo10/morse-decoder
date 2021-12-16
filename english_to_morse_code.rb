@@ -9,12 +9,29 @@ def decode_char(alphabet)
   morse[alphabet]
 end
 
-def decode_word(str)
-  str.split.map { |item| decode_char(item) }.join
+def decode_word(alphabet)
+  word_split = alphabet.split
+  decoded_word = ''
+  word_split.each do |letter|
+    decoded_word += decode_char(letter)
+  end
+  decoded_word
 end
 
 def decode(str)
-  str.split('   ').map { |item| decode_word(item) }.join(' ')
+  sentence_split = str.split('   ')
+  full_sentence_decoded = ' '
+  sentence_split.each do |word|
+    full_sentence_decoded += decode_word(word) + ' '.to_s
+  end
+  full_sentence_decoded.strip
 end
+# test cases
+puts decode('.-')
 
-print decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+puts decode('-- -.--')
+
+puts decode('-- -.--   -. .- -- .')
+
+# message from the bottle
+puts decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
