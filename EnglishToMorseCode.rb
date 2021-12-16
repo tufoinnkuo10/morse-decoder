@@ -1,60 +1,56 @@
-
-dictionary = Hash.new
-
-dictionary[" "] = " " 
-dictionary["A"] = ".-" 
-dictionary["B"] = "-..." 
-dictionary["C"] = "-.-." 
-dictionary["D"] = "-.." 
-dictionary["E"] = "." 
-dictionary["F"] = "..-." 
-dictionary["G"] = "--." 
-dictionary["H"] = "...." 
-dictionary["I"] = ".." 
-dictionary["J"] = ".---" 
-dictionary["K"] = "-.-" 
-dictionary["L"] = ".-.." 
-dictionary["M"] = "--" 
-dictionary["N"] = "-." 
-dictionary["O"] = "---" 
-dictionary["P"] = ".--." 
-dictionary["Q"] = "--.-" 
-dictionary["R"] = ".-." 
-dictionary["S"] = "..." 
-dictionary["T"] = "-" 
-dictionary["U"] = "..-" 
-dictionary["V"] = "...-" 
-dictionary["W"] = ".--" 
-dictionary["X"] = "-..-" 
-dictionary["Y"] = "-.--" 
-dictionary["Z"] = "--.." 
-
-#numbers
-dictionary["1"] = ".----" 
-dictionary["2"] = "..---" 
-dictionary["3"] = "...--" 
-dictionary["4"] = "....-" 
-dictionary["5"] = "....." 
-dictionary["6"] = "-...." 
-dictionary["7"] = "--..." 
-dictionary["8"] = "---.." 
-dictionary["9"] = "----." 
-dictionary["0"] = "-----"
-
-puts "enter a word to be converted"
-text = gets.chomp
-puts "text: #{text}"
-
-puts 
-
-morse = ""
-#to return string in upper case
-
-for c in text.split("")
-
-    morse += dictionary[ c.upcase ].to_s + " "
+def  (alphabet)
+  morse={
+" " => " " 
+"A" => ".-" 
+"B" => "-..." 
+"C" => "-.-." 
+"D" => "-.." 
+"E" => "." 
+"F" => "..-." 
+"G" => "--." 
+"H" => "...." 
+"I" => ".." 
+"J" => ".---" 
+"K" => "-.-" 
+"L" => ".-.." 
+"M" => "--" 
+"N" => "-." 
+"O" => "---" 
+"P" => ".--." 
+"Q" => "--.-" 
+"R" => ".-." 
+"S" => "..." 
+"T" => "-" 
+"U" => "..-" 
+"V" => "...-" 
+"W" => ".--" 
+"X" => "-..-" 
+"Y" => "-.--" 
+"Z" => "--.." 
+}
+morse[alphabet]
 end
 
-puts "morse: #{morse}"
 
-puts "hhahdklfa"
+
+  def decode_word(alphabet)
+    word_split = str.split(" ")
+    decoded_word = ""
+    word_split.each do |letter|
+      decoded_word += decode_char(letter)
+    end
+    decoded_word
+  end
+  
+=begin
+  def decode(str)
+    sentence_split = str.split("   ")
+    full_sentence_decoded = ""
+    sentence_split.each do |word|
+      full_sentence_decoded += decode_word(word) + " "
+    end
+    full_sentence_decoded.strip
+  end
+  
+  print decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+=end
