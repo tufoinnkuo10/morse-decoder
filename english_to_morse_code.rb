@@ -10,7 +10,7 @@ def decode_char(alphabet)
 end
 
 def decode_word(alphabet)
-  word_split = alphabet.split(' ')
+  word_split = alphabet.split
   decoded_word = ''
   word_split.each do |letter|
     decoded_word += decode_char(letter)
@@ -19,10 +19,10 @@ def decode_word(alphabet)
 end
 
 def decode(str)
-  sentence_split = str.split(' ')
-  full_sentence_decoded = ''
+  sentence_split = str.split
+  full_sentence_decoded = ' '
   sentence_split.each do |word|
-    full_sentence_decoded += decode_word(word) + ''
+    full_sentence_decoded += decode_word(word).to_s
   end
   full_sentence_decoded.strip
 end
