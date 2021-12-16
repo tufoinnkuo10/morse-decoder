@@ -1,4 +1,4 @@
-def  (alphabet)
+def  decode_char(alphabet)
   morse={
 " " => " " 
 "A" => ".-" 
@@ -27,7 +27,7 @@ def  (alphabet)
 "X" => "-..-" 
 "Y" => "-.--" 
 "Z" => "--.." 
-}
+     }
 morse[alphabet]
 end
 
@@ -42,7 +42,7 @@ end
     decoded_word
   end
   
-=begin
+
   def decode(str)
     sentence_split = str.split("   ")
     full_sentence_decoded = ""
@@ -53,4 +53,3 @@ end
   end
   
   print decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
-=end
