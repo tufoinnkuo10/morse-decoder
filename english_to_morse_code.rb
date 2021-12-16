@@ -1,4 +1,4 @@
-def  decode_char(alphabet)
+def decode_char(alphabet)
   morse = {
     '.-' => 'A', '-...' => 'B', '-.-.' => 'C', '-..' => 'D', '.' => 'E', '..-.' => 'F',
     '--.' => 'G', '....' => 'H', '..' => 'I', '.---' => 'J', '-.-' => 'K', '.-..' => 'L',
@@ -6,10 +6,9 @@ def  decode_char(alphabet)
     '...' => 'S', '-' => 'T', '..-' => 'U', '...-' => 'V', '.--' => 'W', '-..-' => 'X',
     '-.--' => 'Y', '--..' => 'Z'
   }
+  
   morse[alphabet]
 end
-
-
 
   def decode_word(alphabet)
     word_split = alphabet.split(" ")
